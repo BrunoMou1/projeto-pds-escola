@@ -85,6 +85,8 @@ public class RecompensaServiceImpl implements RecompensaService {
             throw new PontosInsuficienteException("Você não tem pontos suficientes para resgatar a recompensa");
         }
 
+        usuario.setPontos(usuario.getPontos() - recompensa.getValor());
+
         recompensaRepository.save(recompensa);
 
     }

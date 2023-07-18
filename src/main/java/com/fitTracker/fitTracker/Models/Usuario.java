@@ -45,6 +45,10 @@ public class Usuario {
 
 
     @ManyToMany
+    @JoinTable(name = "usuario_atividade", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name="atividade_id"))
+    private List<Atividade> atividades = new ArrayList<>();
+
+    @ManyToMany
     @JoinTable(name = "usuario_avaliacao", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name="avaliacao_id"))
     private List<Avaliacao> avaliacoes = new ArrayList<>();
 
@@ -146,4 +150,7 @@ public class Usuario {
     public List<Recompensa> getHistoricoRecompensas() {
         return historicoRecompensas;
     }
+
+    public List<Atividade> getAtividades() {return atividades;}
+    public void setAtividades(List<Atividade> atividades) {this.atividades = atividades;}
 }

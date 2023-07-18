@@ -32,8 +32,6 @@ public class FrequenciaController {
 
             Frequencia resposta = frequenciaService.save(frequencia, id, new EstrategiaFreq());
 
-            recompensaService.gerarPontuacao(id, new EstrategiaRecompensaEscola());
-
             return new ResponseEntity(resposta, HttpStatus.CREATED);
         } catch (CheckinJaExisteException | ElementoNaoEncontradoException | RepositoryNullException ex ) {
             return ResponseEntity.badRequest().body(ex.getMessage());

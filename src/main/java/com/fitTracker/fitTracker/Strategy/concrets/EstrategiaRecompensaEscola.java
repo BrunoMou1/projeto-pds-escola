@@ -33,10 +33,6 @@ public class EstrategiaRecompensaEscola implements EstrategiaRecompensa {
             }
         }
 
-        if(atividadeRepository == null){
-            throw new RepositoryNullException("Por favor insira uma instancia de AtividadeRepository na list de generic repositories");
-        }
-
         addPoints(usuario);
     }
 

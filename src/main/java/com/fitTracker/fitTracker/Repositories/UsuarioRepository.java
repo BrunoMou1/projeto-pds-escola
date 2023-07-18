@@ -11,6 +11,4 @@ public interface UsuarioRepository extends GenericRepository<Usuario, Long> {
     Optional<Usuario> findByUsername(String username);
 
     boolean existsByUsername(String username);
-
-    List<Usuario> findUsuarioByTreinosId(Long Id);
 }

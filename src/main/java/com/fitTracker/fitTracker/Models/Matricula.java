@@ -32,20 +32,15 @@ public class Matricula {
     @OneToMany(mappedBy = "matricula", cascade = CascadeType.ALL)
     private List<Pagamento> pagamentos = new ArrayList<>();
 
-    @ManyToOne
-    @JoinColumn(name = "plano_id")
-    private Plano plano;
-
     public Matricula() {
     }
 
-    public Matricula(String dataVencimento, String valor, String status, Usuario usuario, List<Pagamento> pagamentos, Plano plano) {
+    public Matricula(String dataVencimento, String valor, String status, Usuario usuario, List<Pagamento> pagamentos) {
         this.dataVencimento = dataVencimento;
         this.valor = valor;
         this.status = status;
         this.usuario = usuario;
         this.pagamentos = pagamentos;
-        this.plano = plano;
     }
 
     public Long getId() {
@@ -94,14 +89,6 @@ public class Matricula {
 
     public void setPagamentos(List<Pagamento> pagamentos) {
         this.pagamentos = pagamentos;
-    }
-
-    public Plano getPlano() {
-        return plano;
-    }
-
-    public void setPlano(Plano plano) {
-        this.plano = plano;
     }
 
 }

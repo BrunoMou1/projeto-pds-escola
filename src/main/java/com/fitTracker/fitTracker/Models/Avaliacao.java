@@ -3,15 +3,17 @@ package com.fitTracker.fitTracker.Models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
+import java.util.List;
+
 @Entity
 public class Avaliacao extends Atividade{
 
-    @NotBlank
-    @Column
-    private String status;
-
     @Column
     private int pontuacao;
+
+    @Column
+    @ElementCollection(targetClass=String.class)
+    private List<String> questoes;
 
     public Avaliacao() {
     }
@@ -29,11 +31,11 @@ public class Avaliacao extends Atividade{
         this.pontuacao = pontuacao;
     }
 
-    public String getStatus() {
-        return status;
+    public List<String> getQuestoes() {
+        return questoes;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setQuestoes(List<String> questoes) {
+        this.questoes = questoes;
     }
 }

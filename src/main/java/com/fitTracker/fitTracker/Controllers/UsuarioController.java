@@ -33,10 +33,10 @@ public class UsuarioController {
         usuarioService.deleteById(id);
     }
 
-    @PutMapping(value="/{usuarioId}/training/{treinoId}")
-    public List<Avaliacao> addTreino(@PathVariable("usuarioId") Long usuarioId, @PathVariable("treinoId") Long treinoId){
+    @PutMapping(value="/{usuarioId}/avaliacao/{atividadeId}")
+    public List<Avaliacao> addAvaliacao(@PathVariable("usuarioId") Long usuarioId, @PathVariable("avaliacaoId") Long avaliacaoId){
         try{
-            return usuarioService.addAvaliacaoUsuario(usuarioId, treinoId);
+            return usuarioService.addAvaliacaoUsuario(usuarioId, avaliacaoId);
         }catch (ElementoNaoEncontradoException | ElementoExisteException ex){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, ex.getMessage());
         }

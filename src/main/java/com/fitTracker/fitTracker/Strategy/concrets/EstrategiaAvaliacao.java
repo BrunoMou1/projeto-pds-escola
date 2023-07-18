@@ -31,10 +31,6 @@ public class EstrategiaAvaliacao implements EstrategiaAtividade {
             throw new RegraNegocioException("Informe um nome válido.");
         }
 
-        if(avaliacao.getStatus() == null || avaliacao.getStatus().trim().equals("")){
-            throw new RegraNegocioException("Informe um status válido");
-        }
-
         if(avaliacao.getPontuacao() < 0){
             throw new RegraNegocioException("Informe uma pontuacao válida");
         }

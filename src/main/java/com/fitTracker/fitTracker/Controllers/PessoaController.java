@@ -1,18 +1,14 @@
 package com.fitTracker.fitTracker.Controllers;
 
 import com.fitTracker.fitTracker.Models.Pessoa;
-import com.fitTracker.fitTracker.Models.Plano;
 import com.fitTracker.fitTracker.Service.PessoaService;
 import com.fitTracker.fitTracker.Util.ElementoExisteException;
 import com.fitTracker.fitTracker.Util.ElementoNaoEncontradoException;
 import com.fitTracker.fitTracker.Util.RegraNegocioException;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/people")

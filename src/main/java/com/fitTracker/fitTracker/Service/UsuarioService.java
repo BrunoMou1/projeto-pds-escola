@@ -18,6 +18,6 @@ public interface UsuarioService {
 
     public List<Usuario> findAll();
 
-    public List<Avaliacao> addAvaliacaoUsuario(Long usuarioId, Long treinoId);
+    public List<Avaliacao> addAvaliacaoUsuario(Long usuarioId, Long avaliacaoId);
 
 }

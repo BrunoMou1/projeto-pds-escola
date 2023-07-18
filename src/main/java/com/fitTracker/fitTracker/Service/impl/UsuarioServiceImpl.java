@@ -48,13 +48,13 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
-    public List<Avaliacao> addAvaliacaoUsuario(Long usuarioId, Long treinoId) {
+    public List<Avaliacao> addAvaliacaoUsuario(Long usuarioId, Long avaliacaoId) {
 
         Usuario usuario = usuarioRepository.findById(usuarioId).get();
 
         if(usuario != null){
 
-            Avaliacao avaliacao = (Avaliacao) atividadeRepository.findById(treinoId).get();
+            Avaliacao avaliacao = (Avaliacao) atividadeRepository.findById(avaliacaoId).get();
 
             if(avaliacao != null){
 
